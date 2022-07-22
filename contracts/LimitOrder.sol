@@ -18,6 +18,8 @@ contract LimitOrder{
 
     //function that takes as input the amouint of usdc I want to spend and the target price of ONE ether
     function createLimitOrder(uint256 amount, uint256 ethPrice) public payable {
+
+        // converting prices to wei
         amount = amount * 1000000000000000000;
         ethPrice = ethPrice * 1000000000000000000;
         uint256 currentETHUSDprices = pool.getAmountsOut(1, tokens);
